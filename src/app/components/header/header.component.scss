@@ -1,0 +1,23 @@
+nav{
+    margin-bottom: 5%;
+}
+
+.content{
+    width: 70%;
+    margin: auto;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.row > div{
+    padding: 0;
+}
+
+.card{
+    margin-bottom: 2%;
+    width: calc(100% * (1/4));
+}
