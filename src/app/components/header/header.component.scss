@@ -1,5 +1,5 @@
 nav{
-    margin-bottom: 5%;
+    margin-bottom: 4%;
 }
 
 .content{
@@ -7,10 +7,16 @@ nav{
     margin: auto;
 }
 
+// .row{
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: space-around;
+// }
+
 .row{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
 }
 
 .row > div{
@@ -19,5 +25,4 @@ nav{
 
 .card{
     margin-bottom: 2%;
-    width: calc(100% * (1/4));
 }
