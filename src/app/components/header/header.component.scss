@@ -3,26 +3,45 @@ nav{
 }
 
 .content{
-    width: 70%;
+    width: 80%;
     margin: auto;
 }
 
-// .row{
+// .fila{
 //     display: flex;
 //     flex-wrap: wrap;
 //     justify-content: space-around;
 // }
 
-.row{
+.fila{
     display:grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
+    grid-gap: 20px;
 }
 
-.row > div{
+.fila > div{
     padding: 0;
 }
 
 .card{
-    margin-bottom: 2%;
+    margin-bottom: 3%;
+}
+
+@media screen and (max-width: 1400px){
+    .fila{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .fila{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 767px){
+    .fila{
+        grid-template-columns: 1fr;
+    }
 }
