@@ -7,33 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListadoProductosComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
+  onNavigate(){
+
+  }
+
   productos = [
     { 
-      titulo: 'Card title', 
-      descripcion: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.', 
-      imagen: 'https://picsum.photos/300/150'
-    },
-    { 
-      titulo: 'Card title', 
-      descripcion: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.', 
-      imagen: 'https://picsum.photos/300/150'
-    },
-    { 
-      titulo: 'Card title', 
-      descripcion: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.', 
-      imagen: 'https://picsum.photos/300/150'
-    },
-    { 
-      titulo: 'Card title', 
-      descripcion: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.', 
-      imagen: 'https://picsum.photos/300/150'
-    },
-    { 
+      id: 1,
       titulo: 'Card title', 
       descripcion: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.', 
       imagen: 'https://picsum.photos/300/150'
