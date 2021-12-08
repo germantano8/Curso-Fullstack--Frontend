@@ -1,2 +1,14 @@
-<p>single-page works! {{producto.titulo}}</p>
-<img [src]="producto.imagen" alt="">
+<div class="container">
+    <div class="fila">
+        <div class="col-left">
+            <img [src]="producto.imagen" alt="producto.titulo">
+        </div>
+        <div class="col-right">
+            <h1>{{producto.titulo}}</h1>
+            <p>{{producto.descripcion}}</p>
+            <p>{{producto.precio | currency}}</p>
+        </div>
+        <button class="btn btn-primary" routerLink="/productos">Volver</button>
+        
+    </div>
+</div>

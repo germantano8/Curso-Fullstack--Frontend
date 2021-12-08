@@ -1,3 +1,4 @@
+import { ProductModel } from 'src/app/models/product-model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -18,10 +19,6 @@ export class ListadoProductosComponent implements OnInit {
 
   }
 
-  verProducto(idx: number) {
-    this.router.navigate(["/producto", idx]);
-  }
-
   getProducto(idx: number) {
     return this.productos[idx];
   }
@@ -31,39 +28,32 @@ export class ListadoProductosComponent implements OnInit {
       titulo: 'Card title', 
       descripcion: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.', 
       imagen: 'https://picsum.photos/300/300',
-      precio: '$100',
+      precio: 100,
     },
     {
       titulo: 'Card title', 
       descripcion: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.', 
       imagen: 'https://picsum.photos/300/300',
-      precio: '$100',
+      precio: '100',
     },
     {
       titulo: 'Card title', 
       descripcion: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.', 
       imagen: 'https://picsum.photos/300/300',
-      precio: '$100',
+      precio: '100',
     },
     {
       titulo: 'Card title', 
       descripcion: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.', 
       imagen: 'https://picsum.photos/300/300',
-      precio: '$100',
+      precio: '100',
     },
     {
       titulo: 'Card title', 
       descripcion: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.', 
       imagen: 'https://picsum.photos/300/300',
-      precio: '$100',
+      precio: '100',
     },
   ];
 
-}
-
-export interface Producto {
-  titulo:string;
-  descripcion:string;
-  imagen:string;
-  idx?: number;
 }

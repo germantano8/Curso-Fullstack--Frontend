@@ -1,17 +1,7 @@
   <div class="content">
     <div class="fila">
-  
       <ng-container *ngFor="let producto of productos; let i = index">
-        <div class="card" style="width: 18rem;">
-          <img [src]="producto.imagen" class="card-img-top" [alt]="producto.titulo" height="200px">
-          <div class="card-body">
-            <h5 class="card-title">{{producto.titulo}}</h5>
-            <p class="card-text">{{producto.descripcion}}</p>
-            <p class="card-price">{{producto.precio}}</p>
-            <button class="btn btn-primary" (click)="verProducto(i)">Ir al producto</button>
-          </div>
-        </div>
+        <app-card [producto]="producto" [index]="i"></app-card>
       </ng-container>
-  
     </div>
   </div>
