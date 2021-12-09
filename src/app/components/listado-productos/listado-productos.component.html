@@ -1,7 +1,9 @@
+<ng-container *ngIf="products">
   <div class="content">
     <div class="fila">
-      <ng-container *ngFor="let producto of productos; let i = index">
-        <app-card [producto]="producto" [index]="i"></app-card>
+      <ng-container *ngFor="let product of products">
+        <app-card [product]="product" [idProduct]="product._id"></app-card>
       </ng-container>
     </div>
   </div>
+</ng-container>

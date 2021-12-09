@@ -1,6 +1,7 @@
-import { ProductModel } from 'src/app/models/product-model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProductModel } from 'src/app/models/product.model';
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-listado-productos',
@@ -9,51 +10,24 @@ import { Router } from '@angular/router';
 })
 export class ListadoProductosComponent implements OnInit {
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private productsService: ProductsService) {
   }
 
+  products:ProductModel[] = [];
+  loading:Boolean = false;
+
   ngOnInit(): void {
+    this.getProducts();
+  }
+
+  getProducts(){
+    this.productsService.getProducts().subscribe((products: ProductModel[]) => {
+      this.products = products;
+    });
   }
 
   onNavigate(){
 
   }
-
-  getProducto(idx: number) {
-    return this.productos[idx];
-  }
-
-  productos = [
-    {
-      titulo: 'Card title', 
-      descripcion: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.', 
-      imagen: 'https://picsum.photos/300/300',
-      precio: 100,
-    },
-    {
-      titulo: 'Card title', 
-      descripcion: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.', 
-      imagen: 'https://picsum.photos/300/300',
-      precio: '100',
-    },
-    {
-      titulo: 'Card title', 
-      descripcion: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.', 
-      imagen: 'https://picsum.photos/300/300',
-      precio: '100',
-    },
-    {
-      titulo: 'Card title', 
-      descripcion: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.', 
-      imagen: 'https://picsum.photos/300/300',
-      precio: '100',
-    },
-    {
-      titulo: 'Card title', 
-      descripcion: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.', 
-      imagen: 'https://picsum.photos/300/300',
-      precio: '100',
-    },
-  ];
 
 }

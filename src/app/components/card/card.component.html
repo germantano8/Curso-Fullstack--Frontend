@@ -1,9 +1,10 @@
 <div class="card" style="width: 18rem;">
-    <img [src]="producto.imagen" class="card-img-top" [alt]="producto.titulo" height="200px">
+    <img [src]="product.image" class="card-img-top" [alt]="product.title" height="200px">
     <div class="card-body">
-        <h5 class="card-title">{{producto.titulo}}</h5>
-        <p class="card-text">{{producto.descripcion}}</p>
-        <p class="card-price">{{producto.precio | currency}}</p>
-        <button class="btn btn-primary" routerLink="/producto/:id" routerLinkActive="router-link-active" (click)="verProducto(index)">Ir al producto</button>
+        <h5 class="card-title">{{product.title}}</h5>
+        <p class="card-text">{{product.description}}</p>
+        <p class="card-price">{{product.price | currency}}</p>
+        <button class="btn btn-primary" routerLink="/producto/:id" routerLinkActive="router-link-active" 
+        (click)="goToProduct()">Ir al producto</button>
     </div>
 </div>

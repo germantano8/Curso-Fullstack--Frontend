@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Input } from '@angular/core';
+import { ProductModel } from '../../models/product.model';
 
 @Component({
   selector: 'app-card',
@@ -9,15 +10,15 @@ import { Input } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
-  @Input() producto:any;
-  @Input() index:any;
+  @Input() product!:ProductModel;
+  @Input() idProduct!:string;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  verProducto(idx: number) {
-    this.router.navigate(["/producto", idx]);
+  goToProduct(){
+    this.router.navigate(['/products', this.idProduct]);
   }
 
 }

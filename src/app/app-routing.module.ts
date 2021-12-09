@@ -8,8 +8,8 @@ import { AboutComponent } from './components/about/about.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomepageComponent },
-  { path: 'productos', component: ListadoProductosComponent },
-  { path: 'producto/:id', component: SinglePageComponent },
+  { path: 'products', component: ListadoProductosComponent },
+  { path: 'products/:id', component: SinglePageComponent },
   { path: 'about', component: AboutComponent },
 ];
 
