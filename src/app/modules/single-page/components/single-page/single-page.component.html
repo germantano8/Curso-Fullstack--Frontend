@@ -1,0 +1,16 @@
+<div class="container" *ngIf="!product"><h1 class="text-center">No se pudo obtener (o no existe) el producto solicitado</h1></div>
+
+<div class="container" *ngIf="product">
+    <div class="fila">
+        <div class="col-left">
+            <img [src]="product.image" [alt]="product.title">
+        </div>
+        <div class="col-right">
+            <h1>{{product.title}}</h1>
+            <p>{{product.description}}</p>
+            <p>{{product.price | currency}}</p>
+        </div>
+        <button class="btn btn-primary" routerLink="/products">Volver</button>
+        
+    </div>
+</div>

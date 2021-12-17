@@ -1,0 +1,13 @@
+<div class="content" *ngIf="products">
+    <div class="fila">
+        <ng-container *ngFor="let product of products">
+            <app-product-card [product]="product" [idProduct]="product._id"></app-product-card>
+        </ng-container>
+    </div>
+</div>
+
+<div class="content" *ngIf="!products">
+    <div class="fila">
+        <h1>No hay productos</h1>
+    </div>
+</div>

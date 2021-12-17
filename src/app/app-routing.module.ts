@@ -1,16 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomepageComponent } from './components/homepage/homepage.component';
-import { ListadoProductosComponent } from './components/listado-productos/listado-productos.component';
-import { SinglePageComponent } from './components/single-page/single-page.component';
-import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomepageComponent },
-  { path: 'products', component: ListadoProductosComponent },
-  { path: 'products/:id', component: SinglePageComponent },
-  { path: 'about', component: AboutComponent },
+  { path: 'home', loadChildren: () => import('./modules/homepage/homepage.module').then((h) => h.HomepageModule) },
+  { path: 'products', loadChildren: () => import('./modules/products/products.module').then((p) => p.ProductsModule) },
+  { path: 'products/:id', loadChildren: () => import('./modules/single-page/single-page.module').then((sp) => sp.SinglePageModule), },
+  { path: 'about', loadChildren: () => import('./modules/about/about.module').then((a) => a.AboutModule) },
 ];
 
 @NgModule({
