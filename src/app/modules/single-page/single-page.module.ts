@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { SinglePageRoutingModule } from './single-page-routing.module';
 import { SinglePageComponent } from './components/single-page/single-page.component';
 
-
 @NgModule({
   declarations: [
     SinglePageComponent,
@@ -14,4 +13,5 @@ import { SinglePageComponent } from './components/single-page/single-page.compon
     SinglePageRoutingModule,
   ]
 })
+
 export class SinglePageModule { }

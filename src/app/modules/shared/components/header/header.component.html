@@ -13,13 +13,16 @@
             <a class="nav-link" routerLinkActive="active" routerLink="products">Productos</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="products/add">Agregar producto</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" routerLinkActive="active" routerLink="about">Sobre mí</a>
           </li>
         </ul>
         <form class="d-flex" (submit)="filterProducts($event)">
           <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="search" [(ngModel)]="search">
-          <button class="btn btn-outline-light" *ngIf="!filtered">Buscar</button>
-          <button class="btn btn-outline-danger" *ngIf="filtered" (click)="reset()">Borrar</button>
+          <button class="btn btn-outline-light me-2">Buscar</button>
+          <button class="btn btn-outline-danger" *ngIf="filtered" (click)="clearFilter()">Limpiar</button>
         </form>
       </div>
     </div>

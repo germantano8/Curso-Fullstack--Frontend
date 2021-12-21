@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductModel } from '@app/models/product.model';
 import { ProductsService } from '@app/services/products.service';
 
 @Component({
@@ -21,11 +20,13 @@ export class HeaderComponent implements OnInit {
     $event.preventDefault();
     this.search=this.search.trim().toLowerCase();
     
-    this._productsService.filterProducts(this.search);
-    this.filtered=true;
+    if(this.search.length>0){
+      this._productsService.filterProducts(this.search);
+      this.filtered=true;
+    }
   }
 
-  reset(){
+  clearFilter(){
     this.search='';
     this.filtered=false;
     this._productsService.getProducts();

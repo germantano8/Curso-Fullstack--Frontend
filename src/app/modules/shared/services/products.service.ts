@@ -17,9 +17,9 @@ export class ProductsService {
   constructor(private http: HttpClient) { }
 
   getProducts() : Observable<ProductModel[]> {
-    // return this.http.get<ProductModelResponse>(`${this.url}/products`).pipe(map(res => res['data']));
     this.http.get<ProductModelResponse>(`${this.url}/products`).subscribe( 
-      (res) => {this.products$.next(res.data as ProductModel[])});
+      (res) => {this.products$.next(res.data as ProductModel[])}
+    );
     return this.products$.asObservable();
   }
 
@@ -31,4 +31,22 @@ export class ProductsService {
     const filteredProducts = this.products$.value.filter(product => product.title.toLowerCase().includes(text));
     this.products$.next(filteredProducts);
   }
+
+  addProduct(product:ProductModel) : Observable<ProductModel> {
+    return this.http.post<ProductModelSingleResponse>(`${ this.url }/products`, product).pipe(
+      map( (res) => res.data )
+    )
+  }
+
+  updateProduct(product:ProductModel) : Observable<ProductModel> {
+    return this.http.put<ProductModelSingleResponse>(`${ this.url }/products/${product._id}`, product).pipe(
+      map( (res) => res.data )
+    );
+  }
+
+  deleteProduct( idProduct: string ): Observable<ProductModel> {
+    return this.http.delete<ProductModelSingleResponse>(`${ this.url }/products/${ idProduct }`).pipe(
+      map( (res) => res.data )
+    );
+  };
 }
